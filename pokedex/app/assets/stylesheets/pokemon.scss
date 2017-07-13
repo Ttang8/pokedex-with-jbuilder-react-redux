@@ -1,0 +1,21 @@
+// Place all the styles related to the Pokemon controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+img {
+  width: 200px;
+  height: 150px;
+}
+
+li {
+  font-size: 2em;
+  list-style: none;
+  font-weight: bold;
+}
+
+figure {
+  text-align: center;
+  padding: 50px;
+  background-color: orange;
+  width: 250px;
+  margin: auto;
+}
