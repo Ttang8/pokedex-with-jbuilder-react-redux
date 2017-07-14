@@ -2,12 +2,17 @@ import {connect} from 'react-redux';
 import PokemonDetail from './pokemon_detail';
 import {requestSinglePokemon} from '../../actions/pokemon_actions';
 
-const mapStateToProps = pokemon => ({
-  pokemon
-});
+const mapStateToProps = state => {
+  if (state.pokemon.currentPokeId === undefined) {
+    return {currentPoke: {}};
+  }
+  return {
+  currentPoke: state.pokemon.entities[state.pokemon.currentPokeId]
+  };
+};
 
 const mapDispatchToProps = dispatch => ({
-  requestSinglePokemon: () => dispatch(requestSinglePokemon())
+  requestSinglePokemon: (id) => dispatch(requestSinglePokemon(id))
 });
 
 export default connect(
